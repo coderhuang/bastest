@@ -2,10 +2,8 @@ package toby.test.lang;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
-import java.util.Objects;
 import java.util.function.Consumer;
 
 import org.junit.jupiter.api.Test;
@@ -90,9 +88,24 @@ class PatternMatchingTest {
 		Consumer<Object> consumer = obj -> {
 			if (obj instanceof String s) {
 				System.err.println(s);
+			} else {
+				System.err.println(obj);
 			}
 		};
 		consumer.accept("pattern matching for instanceof is done");
+		consumer.accept(1);
+
+		System.err.println("-------------分割线----------------");
+
+		Consumer<Object> consumer1 = obj -> {
+			if (!(obj instanceof String s)) {
+				System.err.println(obj);
+			} else {
+				System.err.println(s);
+			}
+		};
+		consumer1.accept("pattern matching for instanceof is done");
+		consumer1.accept(1);
 	}
 
 }
