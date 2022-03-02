@@ -17,7 +17,6 @@ class PatternMatchingTest {
 
 		Object obj = "123";
 		if (obj instanceof String s) {
-
 			System.err.println(s);
 		}
 		assertTrue(true);
@@ -67,7 +66,7 @@ class PatternMatchingTest {
 		System.err.println("""
 				'啊哈',你港嘿咩嘿
 
-				"阿拉同你港"
+				 "阿拉同你港"
 				""");
 		System.err.println("""
 				\"""
